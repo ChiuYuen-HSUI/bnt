@@ -39,7 +39,7 @@ function CPT2 = mk_named_CPT(family_names, names, dag, CPT1)
 n = length(family_names);
 family_nums = zeros(1,n);
 for i=1:n
-  family_nums(i) = stringmatch(family_names{i}, names); % was strmatch
+  family_nums(i) = find(strcmp(family_names{i}, names)); % was stringmatch
 end
 
 fam = family(dag, family_nums(end));
